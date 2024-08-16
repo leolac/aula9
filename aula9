@@ -1,0 +1,31 @@
+# Sistema de Banco
+# Cadastro
+print('-----BANCO-----')
+nome = input('Defina um nome de usuário para a sua conta: ')
+senha = input('Defina uma senha para a sua conta: ')
+dinheiro = 500
+acessopermitido = False
+acao = 0
+print('Conta criada.')
+
+#Login
+print('-----LOGIN-----')
+for i in range(6):
+    if input('Você tem 5 tentativas. Digite a sua senha para entrar na conta: ') == senha:
+         acessopermitido = True
+         break
+else:
+    print('O cadastro não foi possível. O máximo de tentativas foi atingido.')
+
+if acessopermitido == True:
+     print('Acesso permitido.')
+     print(f'------EXTRATO BANCÁRIO-----\nVocê possui R${dinheiro}.00 presentes na conta.\nNenhuma transação realizada.')
+     acao = input('Digite [1] para fazer um depósito\nDigite [2] para fazer um saque.\nDigite [3] para sair do sistema.')
+if acao == '1':
+         dinheiro += int(input('Digite qual valor você deseja depositar: '))
+         print(f'A sua conta agora tem R${dinheiro}.00')
+elif acao == '2':
+    dinheiro -= int(input('Digite qual valor você deseja sacar: '))
+    print(f'A sua conta agora tem R${dinheiro}.00')
+elif acao == '3':
+     print('Você saiu do sistema.')
